@@ -5,3 +5,7 @@
 #registerLink, #loginLink {
   display: none;
 }
+
+.imageIcon {
+  height: 80px;
+}
