@@ -1,14 +1,11 @@
 'use strict';
 
-var Firebase = require('firebase');
 var express = require('express');
-
 var router = express.Router();
 
 var authMiddleware = require('../config/auth');
 var User = require('../models/user');
 
-var ref = new Firebase('https://paigephotogallery.firebaseio.com/');
 
 /* POST to create new user */
 router.post('/register', function(req, res, next) {
@@ -30,7 +27,6 @@ router.get('/resetPassword', function(req, res, next){
   res.render('resetPassword');
 });
 
-
 /* POST request to reset password */
 router.post('/resetPassword', function(req, res, next){
   User.resetPassword(req.body.email, function(err) {
@@ -39,7 +35,6 @@ router.post('/resetPassword', function(req, res, next){
     });
 });
 
-
 /* POST request to change user password */
 router.post('/changePassword', function(req, res, next){
   User.changePassword(req.body, function(err) {
@@ -47,7 +42,6 @@ router.post('/changePassword', function(req, res, next){
     res.send("password change successful");
   });
 });
-
 
 /* GET request to clear cookies to log a user out */
 router.get('/logout', function(req, res, next) {

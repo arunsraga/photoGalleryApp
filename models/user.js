@@ -5,7 +5,6 @@ var Firebase = require('firebase');
 var jwt = require('jwt-simple');
 
 var JWT_SECRET = process.env.JWT_SECRET;
-
 var ref = new Firebase('https://paigephotogallery.firebaseio.com/');
 
 var User;
@@ -58,7 +57,6 @@ userSchema.statics.changePassword = function(userObj, cb) {
     cb()
   });
 };
-
 
 // instance method
 userSchema.methods.generateToken = function() {

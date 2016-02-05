@@ -1,5 +1,5 @@
 {
-  "name": "user_auth_trading_app",
+  "name": "photo_gallery_app",
   "description": "",
   "main": "",
   "authors": [
@@ -7,7 +7,7 @@
   ],
   "license": "MIT",
   "moduleType": [],
-  "homepage": "",
+  "homepage": "https://github.com/bolducp/photoGalleryApp",
   "ignore": [
     "**/.*",
     "node_modules",

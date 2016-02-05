@@ -8,15 +8,8 @@ block content
   h1 Hello, #{user.username}!
   .row
     .col-xs-6
-      a(href="/profile/userBooks")
-        #userBooks.bookIcon
+      .navIcon
+        a(href="/profile/albums") See Albums
     .col-xs-6
-      a(href="/profile/availableBooks")
-        #allBooks.bookIcon
-  .row
-    .col-xs-6
-      a(href="/profile/addBook")
-        #addBook.bookIcon
-    .col-xs-6
-      a(href="/profile/transactions")
-        #transactionHistory.bookIcon
+      .navIcon
+        a(href="/profile/createAlbum") Create New Album
