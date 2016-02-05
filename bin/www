@@ -5,7 +5,7 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('user_auth_trading_app:server');
+var debug = require('debug')('photo_gallery_app:server');
 var http = require('http');
 
 /**
