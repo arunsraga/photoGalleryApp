@@ -1,0 +1,22 @@
+extends layout
+
+block links
+  link(rel='stylesheet', href='/css/loggedInNavbar.css')
+  link(rel='stylesheet', href='/css/profile.css')
+
+block content
+  h1 Hello, #{user.username}!
+  .row
+    .col-xs-6
+      a(href="/profile/userBooks")
+        #userBooks.bookIcon
+    .col-xs-6
+      a(href="/profile/availableBooks")
+        #allBooks.bookIcon
+  .row
+    .col-xs-6
+      a(href="/profile/addBook")
+        #addBook.bookIcon
+    .col-xs-6
+      a(href="/profile/transactions")
+        #transactionHistory.bookIcon
