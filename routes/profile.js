@@ -28,7 +28,6 @@ router.get('/changePassword', function(req, res){
 /* GET to render user albums */
 router.get('/albums', function(req, res){
   Album.find({userId: req.user._id}, function(err, albums){
-    console.log(albums);
     if (err) return res.status(400).send(err);
     res.render('albums', {albums: albums});
   });
