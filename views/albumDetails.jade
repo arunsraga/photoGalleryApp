@@ -7,9 +7,8 @@ block content
   h1 #{album.title} Album
   br
   .page-header
-    h3 Add images to album:
+    h2 Add images to album
     form(action=`/photos/${album.id}`, method='post', enctype='multipart/form-data')
-    
       .form-group
         input(type='file', name='images', multiple=true)
       button.btn.btn-info Submit
@@ -18,15 +17,13 @@ block content
   table.table.table-hover
     thead
       tr
-        th Photo
-        th Image url
+        th Photo name
+        th Preview thumbnail
     tbody
       each photo in photos
         tr.dataRow(data-album = photo.id)
           td.name.searchable #{photo.filename}
           td 
             img.imageIcon(src=photo.url)
-          
-            
 
 block scripts
