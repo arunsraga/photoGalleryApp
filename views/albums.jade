@@ -1,0 +1,19 @@
+extends layout
+
+block links
+  link(rel='stylesheet', href='/css/loggedInNavbar.css')
+
+block content
+  h1 My Albums
+  table.table.table-hover
+    thead
+      tr
+        th Album Name
+    tbody
+      each album in albums
+        tr.dataRow(data-album = album.id)
+          td.name.searchable 
+            a(href=`/profile/albums/${album.id}`)
+              h2  #{album.title} 
+
+block scripts

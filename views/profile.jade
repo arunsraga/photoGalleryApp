@@ -7,9 +7,11 @@ block links
 block content
   h1 Hello, #{user.username}!
   .row
-    .col-xs-6
-      .navIcon
-        a(href="/profile/albums") See Albums
-    .col-xs-6
-      .navIcon
-        a(href="/profile/createAlbum") Create New Album
+    .col-xs-6.col-xs-offset-1
+      a(href="/profile/albums")
+        .navIcon
+          h3 See Albums
+    .col-xs-5
+      a(href="/profile/createAlbum")
+        .navIcon
+          h3 Create New Album
