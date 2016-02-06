@@ -15,13 +15,17 @@ var photoSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Album'
   },
+  userId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User'
+  },
   filename: String,
   url: String,
   dateAdded: {type: String, default: moment().format('MMMM Do YYYY')}
 });
 
 // class methods
-photoSchema.statics.addPhotos = function(albumId, files, callback) {
+photoSchema.statics.addPhotos = function(albumId, userId, files, callback) {
   each(files, function(file, next){
     var filename = file.originalname;
     var ext = filename.match(/\.\w+$/)[0] || '';
@@ -37,7 +41,8 @@ photoSchema.statics.addPhotos = function(albumId, files, callback) {
       var photo = new Photo({
         filename: filename,
         url: url,
-        albumId: albumId
+        albumId: albumId,
+        userId: userId
       });
       photo.save(function(){
         next();

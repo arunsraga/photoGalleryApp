@@ -3,6 +3,16 @@ th {
   font-family: 'Montez', cursive;
 }
 
+td {
+  font-size: 20px;
+  font-family: 'Josefin Slab', serif;
+}
+
+a > h3 {
+  color: snow;
+  font-size: 26px;
+}
+
 #delete {
   vertical-align: middle;
   text-align: center;
@@ -39,6 +49,12 @@ th {
   opacity: 0.9;
 }
 
+#albumPage img{
+  width: 200px;
+  border: 2px solid gray;
+  border-radius: 5px;
+}
+
 .imageIcon {
   height: 80px;
 }
@@ -53,4 +69,9 @@ th {
   padding: 10px 0 20px 10px;
   border: 2px solid black;
   border-radius: 6px;
+}
+
+.navbar-default {
+    background-color: #fbc15f;
+    border: 2px solid gray;
 }

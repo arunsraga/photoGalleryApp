@@ -4,8 +4,13 @@ block links
   link(rel='stylesheet', href='/css/loggedInNavbar.css')
 
 block content
-  h1 #{album.title} Album
-  br
+  .row
+    .col-xs-3
+      #albumPage
+        img(src=album.coverImg)
+    .col-xs-9
+      h1 #{album.title} Album
+      
   .page-header
     h2 Add images to album
     form(action=`/photos/${album.id}`, method='post', enctype='multipart/form-data')

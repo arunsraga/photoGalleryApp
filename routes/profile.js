@@ -70,7 +70,7 @@ router.delete('/delete', function(req, res){
 });
 
 router.delete('/albums/delete', function(req, res){
-  Album.findByIdAndRemove(req.body.albumId, function(err, photo){
+  Album.findByIdAndRemove(req.body.albumId, function(err){
     if (err) return res.status(400).send(err);
     Photo.remove({albumId: req.body.albumId}, function(err){
       if (err) return res.status(400).send(err);
@@ -79,7 +79,6 @@ router.delete('/albums/delete', function(req, res){
   });
 });
 
-
 router.post('/changeCover', function(req, res){
   Photo.findById(req.body.photoId, function(err, photo){
     if (err) return res.status(400).send(err);
@@ -87,7 +86,7 @@ router.post('/changeCover', function(req, res){
       album.coverImg = photo.url;
       album.save(function(err){
         if (err) return res.status(400).send(err);
-        res.send();
+        res.send(album.id);
       });
     });
   });

@@ -15,11 +15,9 @@ function makeAlbumCover(){
     url: '/profile/changeCover',
     data: {photoId: photoId}
   }).success(function(albumId){
-    location.href=`/profile/albums/${albumId}`
+    location.href=`/profile/albums/${albumId}`;
   });
 }
-
-
 
 function questionDelete(){
   var $this = $(this);
