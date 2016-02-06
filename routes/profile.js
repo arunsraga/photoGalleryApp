@@ -53,4 +53,12 @@ router.get('/albums/:albumId', function(req, res) {
   });
 });
 
+
+router.get('/:photoId', function(req, res) {
+  Photo.findById(req.params.photoId, function(err, photo) {
+    if (err) return res.status(400).send(err);
+    res.render('photo', {photo: photo});
+  });
+});
+
 module.exports = router;

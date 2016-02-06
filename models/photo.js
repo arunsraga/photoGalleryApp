@@ -30,7 +30,7 @@ photoSchema.statics.addPhotos = function(albumId, files, callback) {
       Body: file.buffer
     };
     s3.putObject(params, function(err, data){
-      if (err) return res.status(400).send(err);
+      if (err) return callback(err);
       var url = process.env.AWS_URL + "/" + process.env.AWS_BUCKET + "/" + key;
       var photo = new Photo({
         filename: filename,

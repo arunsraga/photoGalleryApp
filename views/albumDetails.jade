@@ -24,6 +24,7 @@ block content
         tr.dataRow(data-album = photo.id)
           td.name.searchable #{photo.filename}
           td 
-            img.imageIcon(src=photo.url)
+            a(href=`/profile/${photo._id}`)
+              img.imageIcon(src=photo.url)
 
 block scripts
