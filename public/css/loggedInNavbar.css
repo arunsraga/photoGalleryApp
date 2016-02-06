@@ -3,6 +3,11 @@ th {
   font-family: 'Montez', cursive;
 }
 
+#delete {
+  vertical-align: middle;
+  text-align: center;
+}
+
 #changePassword, #logoutLink {
   display: inherit;
 }
@@ -20,11 +25,18 @@ th {
   width: 40%;
 }
 
-#albumCover {
-  background: url('http://content.mycutegraphics.com/graphics/career/blank-picture-frame.png') no-repeat center center;
-  background-size: contain;
+#cover {
+  height: 125px;
+}
+
+#noPhotos {
   text-align: center;
-  height: 200px;
+  margin-left: 25%;
+  margin-right: 25%;
+  padding: 5px 0 15px 0;
+  color: black;
+  background-color: LightSteelBlue;
+  opacity: 0.9;
 }
 
 .imageIcon {

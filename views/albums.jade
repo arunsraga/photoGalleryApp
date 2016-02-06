@@ -11,14 +11,20 @@ block content
       tr
         th Cover
         th Album Name
+        th Delete Album
     tbody
       each album in albums
         tr.dataRow(data-album = album.id)
           td 
             a(href=`/profile/albums/${album.id}`)
-              img(src=album.coverImg)
+              img#cover(src=album.coverImg)
           td.name.searchable 
             a(href=`/profile/albums/${album.id}`)
               h2  #{album.title} 
-
+          td 
+            br
+            button#delete.btn.btn-danger
+              span.glyphicon.glyphicon-trash
+            
 block scripts
+  script(src="/js/albums.js")

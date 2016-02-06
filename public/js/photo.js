@@ -4,7 +4,22 @@ $(document).ready(init);
 
 function init(){
   $("#delete").click(questionDelete);
+  $('#makeCover').click(makeAlbumCover);
 }
+
+function makeAlbumCover(){
+  var photoId = $(this).data('photo');
+
+  $.ajax({
+    method: 'POST',
+    url: '/profile/changeCover',
+    data: {photoId: photoId}
+  }).success(function(albumId){
+    location.href=`/profile/albums/${albumId}`
+  });
+}
+
+
 
 function questionDelete(){
   var $this = $(this);

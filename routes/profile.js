@@ -69,6 +69,29 @@ router.delete('/delete', function(req, res){
   });
 });
 
+router.delete('/albums/delete', function(req, res){
+  Album.findByIdAndRemove(req.body.albumId, function(err, photo){
+    if (err) return res.status(400).send(err);
+    Photo.remove({albumId: req.body.albumId}, function(err){
+      if (err) return res.status(400).send(err);
+      res.send();
+    });
+  });
+});
+
+
+router.post('/changeCover', function(req, res){
+  Photo.findById(req.body.photoId, function(err, photo){
+    if (err) return res.status(400).send(err);
+    Album.findById(photo.albumId, function(err, album){
+      album.coverImg = photo.url;
+      album.save(function(err){
+        if (err) return res.status(400).send(err);
+        res.send();
+      });
+    });
+  });
+});
 
 
 module.exports = router;
