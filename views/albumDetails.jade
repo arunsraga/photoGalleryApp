@@ -17,14 +17,21 @@ block content
   table.table.table-hover
     thead
       tr
+        th Preview thumbnail 
         th Photo name
-        th Preview thumbnail
+        th Date added
+        th Delete
     tbody
       each photo in photos
-        tr.dataRow(data-album = photo.id)
-          td.name.searchable #{photo.filename}
+        tr.dataRow(data-photo = photo.id)
           td 
             a(href=`/profile/${photo._id}`)
               img.imageIcon(src=photo.url)
+          td.name.searchable #{photo.filename}
+          td #{photo.dateAdded}
+          td 
+            button#delete.btn.btn-danger
+              span.glyphicon.glyphicon-trash
 
 block scripts
+  script(src="/js/albumDetails.js")

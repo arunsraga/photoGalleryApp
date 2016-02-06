@@ -6,6 +6,7 @@ var AWS = require('aws-sdk');
 var uuid = require('node-uuid');
 var each = require('async-each');
 var s3 = new AWS.S3();
+var moment = require('moment');
 
 var Photo;
 
@@ -15,7 +16,8 @@ var photoSchema = new mongoose.Schema({
     ref: 'Album'
   },
   filename: String,
-  url: String
+  url: String,
+  dateAdded: {type: String, default: moment().format('MMMM Do YYYY')}
 });
 
 // class methods

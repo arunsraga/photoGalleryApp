@@ -8,3 +8,9 @@ block content
     h1 Photo
     img(src=photo.url)
     h2 #{photo.filename}
+    button#delete.btn.btn-danger(data-photo = photo.id) Delete
+    br
+    button#makeCover.btn.btn-info(data-photo = photo.id) Make Album Cover
+    
+block scripts
+  script(src="/js/photo.js")

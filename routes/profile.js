@@ -61,4 +61,14 @@ router.get('/:photoId', function(req, res) {
   });
 });
 
+
+router.delete('/delete', function(req, res){
+  Photo.findByIdAndRemove(req.body.photoId, function(err, photo){
+    if (err) return res.status(400).send(err);
+    res.send(photo.albumId);
+  });
+});
+
+
+
 module.exports = router;

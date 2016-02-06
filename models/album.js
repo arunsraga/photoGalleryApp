@@ -10,7 +10,8 @@ var albumSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User'
   },
-  title: {type: String, default: Date.now().toString()}
+  title: {type: String, default: Date.now().toString()},
+  coverImg: {type: String, default: "http://images.clipartpanda.com/silliness-clipart-Photo_Album_Clip_Art.gif"}
 });
 
 // class methods

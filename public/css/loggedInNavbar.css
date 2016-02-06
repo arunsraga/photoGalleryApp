@@ -17,7 +17,14 @@ th {
 }
 
 #photoWrapper img {
-  height: 400px;
+  width: 40%;
+}
+
+#albumCover {
+  background: url('http://content.mycutegraphics.com/graphics/career/blank-picture-frame.png') no-repeat center center;
+  background-size: contain;
+  text-align: center;
+  height: 200px;
 }
 
 .imageIcon {

@@ -9,10 +9,14 @@ block content
   table.table.table-hover
     thead
       tr
+        th Cover
         th Album Name
     tbody
       each album in albums
         tr.dataRow(data-album = album.id)
+          td 
+            a(href=`/profile/albums/${album.id}`)
+              img(src=album.coverImg)
           td.name.searchable 
             a(href=`/profile/albums/${album.id}`)
               h2  #{album.title} 
